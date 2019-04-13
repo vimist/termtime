@@ -1,0 +1,22 @@
+language: python
+python:
+- '3.4'
+install: true
+script: true
+deploy:
+  provider: pypi
+  user: vimist
+  password:
+    secure: >
+      KzPmrgHyHz+uK5/vWxZIO9c/D6bFAAaecS0ybcInICFVoP0yqIenEoXMCICb7E6+DWNatEDyKs
+      9TdIEyLirzJMOSYV7ei2Hyn1M5nkcHX+R67Z1VE5ef73c05IH5NIjIETjt7zx8rq2rYkpZORgh
+      reV8w+EXqgtdZXeiXfPxOdSTEgxDrqJ+mWNQ9Qg+I0Hh4UoS2pDOOqPXBZVEAjn1SQ5GLQsmL4
+      9D5CAeX6hSLSU3/xZz9D5RHhsRnpPaqnScFM9Ms1e5ejaOIYow0nBt9EyM7fyYxAuUe+ToDXxd
+      pETBrl1iYqjXg5IFtvC/56UfkZN+r+V5GRigxCUl7bjgwdPyNesSM/RYNBvqQx6Bs6NESpcfU8
+      5QkJsbBNQa9TaagO2L4cA+takvGmTXXFio4rH4nHlRD+PfgsqzsMdUdtykTvR6LVeLaCEraOTz
+      xZBU//ZL1Mvfiq/4i+XwYkwmasn+Z9PGp/LYubtqOM2ODLXV0ZevC9BMt8Chw496Z/XTHHwlVZ
+      5YT64FqgPbC926uGAytwZbLX06epFYSe9/jGvhbzrk6qNT3MGxe4aDDb78qclEwi659xwQA9Is
+      IwKcjrlDvol+mU48JyeTjp5y8NWcRg/sF+n84s1yZ7aPvPcwVaNimcidO1nxWHr6JOrVmjy2aj
+      bzK1WdA0sz3vTPMl0=
+    on:
+      tags: true
