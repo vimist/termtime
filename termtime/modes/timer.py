@@ -1,16 +1,18 @@
 import time
+import sys
 
 from termtime.modes.mode import Mode
 from termtime.fonts import render
 
 
-class Stopwatch(Mode):
-    """Display a stopwatch that starts from the moment the program is launched.
+class Timer(Mode):
+    """Display a timer that starts at the argument timer when the program is launched, and go back to zero.
     """
     def __init__(self, args):
         super().__init__(args)
 
-        self.start_time = time.time()
+        self.start_time = time.time()+self.timer
+
 
     def draw_frame(self, screen, screen_width, screen_height):
         """Draw the stopwatch to the screen.
@@ -20,7 +22,13 @@ class Stopwatch(Mode):
         max_width = min(self.max_width, screen_width)
         max_height = min(self.max_height, screen_height)
 
-        time_delta = time.time() - self.start_time
+        time_delta = self.start_time - time.time()
+
+        if time_delta <= 0:
+            hours, remainder = divmod(self.timer, 60*60)
+            minutes, seconds = divmod(remainder, 60)
+            time_string = '{:02.0f}:{:02.0f}:{:05.2f}'.format(hours, minutes, seconds)
+            return 'Elapsed time: {}'.format(time_string), True
 
         hours, remainder = divmod(time_delta, 60*60)
         minutes, seconds = divmod(remainder, 60)

@@ -25,12 +25,14 @@ def loop(stdscr, args):
 
     mode = args.mode(args)
 
+    finished = False
+
     try:
-        while True:
+        while not finished:
             stdscr.clear()
 
             screen_height, screen_width = stdscr.getmaxyx()
-            value = mode.draw_frame(stdscr, screen_width, screen_height)
+            value, finished = mode.draw_frame(stdscr, screen_width, screen_height)
 
             stdscr.refresh()
             time.sleep(0.12345)
@@ -53,6 +55,9 @@ def main():
     parser.add_argument(
         '--max-height', type=int, default=float('inf'),
         help='The maximum height of the output.')
+    parser.add_argument(
+        '-t', '--timer', type=int, default=60,
+        help='The starting time for the timer (only for timer mode)')
     parser.set_defaults(mode=modes.Stopwatch)  # Default to the stopwatch
 
     subparsers = parser.add_subparsers(

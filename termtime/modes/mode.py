@@ -6,6 +6,7 @@ class Mode(ABC):
         self.font = args.font
         self.max_width = float('inf')
         self.max_height = float('inf')
+        self.timer = args.timer
 
     @abstractmethod
     def draw_frame(self, screen, font, screen_width, screen_height):
