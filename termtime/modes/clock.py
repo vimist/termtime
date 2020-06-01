@@ -23,5 +23,3 @@ class Clock(Mode):
                 int(screen_height/2 - height/2) + i,
                 int(screen_width/2 - width/2),
                 line)
-        
-        return None, False
