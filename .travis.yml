@@ -1,22 +1,22 @@
 language: python
 python:
-- '3.4'
+- '3.5'
 install: true
 script: true
 deploy:
   provider: pypi
-  user: vimist
+  user: __token__
   password:
     secure: >
-      KzPmrgHyHz+uK5/vWxZIO9c/D6bFAAaecS0ybcInICFVoP0yqIenEoXMCICb7E6+DWNatEDyKs
-      9TdIEyLirzJMOSYV7ei2Hyn1M5nkcHX+R67Z1VE5ef73c05IH5NIjIETjt7zx8rq2rYkpZORgh
-      reV8w+EXqgtdZXeiXfPxOdSTEgxDrqJ+mWNQ9Qg+I0Hh4UoS2pDOOqPXBZVEAjn1SQ5GLQsmL4
-      9D5CAeX6hSLSU3/xZz9D5RHhsRnpPaqnScFM9Ms1e5ejaOIYow0nBt9EyM7fyYxAuUe+ToDXxd
-      pETBrl1iYqjXg5IFtvC/56UfkZN+r+V5GRigxCUl7bjgwdPyNesSM/RYNBvqQx6Bs6NESpcfU8
-      5QkJsbBNQa9TaagO2L4cA+takvGmTXXFio4rH4nHlRD+PfgsqzsMdUdtykTvR6LVeLaCEraOTz
-      xZBU//ZL1Mvfiq/4i+XwYkwmasn+Z9PGp/LYubtqOM2ODLXV0ZevC9BMt8Chw496Z/XTHHwlVZ
-      5YT64FqgPbC926uGAytwZbLX06epFYSe9/jGvhbzrk6qNT3MGxe4aDDb78qclEwi659xwQA9Is
-      IwKcjrlDvol+mU48JyeTjp5y8NWcRg/sF+n84s1yZ7aPvPcwVaNimcidO1nxWHr6JOrVmjy2aj
-      bzK1WdA0sz3vTPMl0=
-    on:
-      tags: true
+    A6TKegnnpNB+QtmRKq5YJHTsRvZ5xBx2Cjnu20LsODRQwNfDm2Tg88Obdz8QzEU1kChbE6VY/6K
+    YhSqEnKaWem2sY2O4QO5dIATW5DLLL3V289cOq2eP/GhFBveXuIHu3gNbZ4xjHRLmEZ3tPIo6QS
+    IW3lecDeLGoT32vj+1wfC5hzCu/7z/DGR6iWNTTO8fuctFCeTwzLcRkpbJJfSxjWWsphKmrlmU2
+    TgIdYHcpmznslXfkNB0mUh+ZyQPVnVVoRN5fW0lMkqqYmhGDwdk4Qn81EbBRwMGbWnQojkVLm2u
+    MH3rpUiZ3EcWQdlBq8jlckR0HbVeYqstMKfh5oIgI/1TcXu5CimcXJyzxLM+XGG/SXJq/p1NR3D
+    yRDRN43MvhAVPd4DX6M14oy63fEa9GCeOaYeBeN+hDtDkMCZq1NOEa62kQ2+V47/1cbfvpVwZHu
+    ztn3od2xsY5SahLYwS1PrObGZhsYxMcG4f4so9TJB+EXLZrO/AXDaHaVnE0dXtpUoTr/0YEjns+
+    9K48+iE5ENavrqx7JcKGtaAqZjWFZ5vCaR8PyMqeCPs1dlYJECC0baPc6xiqSCpGYAKfIx4d2jh
+    xBd84NGAXI76ggfhvDtkQpFfjkzXxEFXMvaRfpw/AotgG6wlKSITD7PKNlTcJoYz+/VjflS0Uwf
+    KX78S4uc=
+  on:
+    tags: true
