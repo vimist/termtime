@@ -3,11 +3,13 @@ from abc import ABC, abstractmethod
 
 class Mode(ABC):
     def __init__(self, args):
-        self.font = args.font
-        self.max_width = float('inf')
-        self.max_height = float('inf')
+        """Initialise the base mode variables.
 
+        Parameters:
+            args: The parsed command line arguments.
+        """
         self.running = True
+        self.termination_string = None
 
     @staticmethod
     def configure_parser(parser):
@@ -31,15 +33,8 @@ class Mode(ABC):
         return hours, minutes, seconds
 
     @abstractmethod
-    def draw_frame(self, screen, font, screen_width, screen_height):
-        """Draw one frame to the screen.
+    def get_time_string(self):
+        """Get the time string to display.
 
-        Parameters:
-            screen: The curses screen to draw to.
-            font: The font to use to draw the numbers.
-            screen_width: The width of the screen.
-            screen_height: The height of the screen.
-
-        Returns: A string that will get displayed to the user if the program
-            were to exit now.
+        Returns: A string containing the time to display to the user.
         """

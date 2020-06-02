@@ -27,20 +27,16 @@ mapping = {
 }
 
 
-def render(font, number, max_size=(float('inf'), float('inf'))):
-    """Render a number using a given 'font'.
+def render(value, screen, font, screen_width, screen_height):
+    """Render a number to the screen using a given 'font'.
 
     Parameters:
+        value (str): The number to render. Can include ':' and '.' characters.
+        screen (curses.window): The curses window to draw to.
         font (list): A font in the `fonts` module. Structure must be the same
             as the `default` font.
-        number (int/str): The number to render. Can include ':' and '.'
-            characters.
-        max_size (tuple): The max width and height of the font, the largest
-            font will be used.
-
-    Returns (tuple): A tuple containing a list of lines that can be printed to
-        the terminal (line by line), the width of the text and the hiehgt of
-        the text.
+        screen_width (int): The width of the available screen.
+        screen_height (int): The height of the available screen.
     """
     for size in reversed(font):
         output = []
@@ -48,19 +44,19 @@ def render(font, number, max_size=(float('inf'), float('inf'))):
         size_ok = True
         height = len(size[0])
 
-        if height > max_size[1]:
+        if height > screen_height:
             size_ok = False
             continue
 
         for i in range(height):
             line = ''
-            for digit in str(number):
+            for digit in value:
                 line += size[mapping[digit]][i]
                 line += ' ' * ceil(height//3)
 
             output.append(line)
 
-            if len(line) > max_size[0]:
+            if len(line) > screen_width:
                 size_ok = False
                 output = []
                 break
@@ -68,9 +64,13 @@ def render(font, number, max_size=(float('inf'), float('inf'))):
         if size_ok:
             break
 
-    output =  output if size_ok else [str(number)]
+    output =  output if size_ok else [number]
 
     width = len(output[0])
     height = len(output)
 
-    return output, width, height
+    for i, line in enumerate(output):
+        screen.addstr(
+            int(screen_height/2 - height/2) + i,
+            int(screen_width/2 - width/2),
+            line)

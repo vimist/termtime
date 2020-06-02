@@ -1,8 +1,6 @@
 import time
-import sys
 
 from termtime.modes.mode import Mode
-from termtime.fonts import render
 
 
 class Countdown(Mode):
@@ -26,33 +24,21 @@ class Countdown(Mode):
             'duration', type=int,
             help='The duration of the countdown timer in seconds.')
 
-    def draw_frame(self, screen, screen_width, screen_height):
-        """Draw the countdown timer to the screen.
+    def get_time_string(self):
+        """Get the remaining time on the countdown.
 
-        Returns: A string containing the total elapsed time.
+        Returns: The remaining time on the countdown as a string.
         """
-        max_width = min(self.max_width, screen_width)
-        max_height = min(self.max_height, screen_height)
-
         time_delta = self._end_time - time.time()
 
         if time_delta < 0:
             time_delta = 0
             self.running = False
 
+        elapsed_time = self.duration_to_hms(self._duration - time_delta)
+        self.termination_string = \
+            'Elapsed time: {:02.0f}:{:02.0f}:{:05.2f}'.format(*elapsed_time)
+
         hours, minutes, seconds = self.duration_to_hms(time_delta)
 
-        time_string = '{:02.0f}:{:02.0f}:{:05.2f}'.format(
-            hours, minutes, seconds)
-
-        numbers, width, height = render(
-            self.font, time_string, (max_width, max_height))
-
-        for i, line in enumerate(numbers):
-            screen.addstr(
-                int(screen_height/2 - height/2) + i,
-                int(screen_width/2 - width/2),
-                line)
-
-        return 'Elapsed time: {:02.0f}:{:02.0f}:{:05.2f}'.format(
-            *self.duration_to_hms(self._duration - time_delta ))
+        return '{:02.0f}:{:02.0f}:{:05.2f}'.format(hours, minutes, seconds)

@@ -30,14 +30,16 @@ def loop(stdscr, args):
             stdscr.clear()
 
             screen_height, screen_width = stdscr.getmaxyx()
-            value = mode.draw_frame(stdscr, screen_width, screen_height)
+            value = mode.get_time_string()
+
+            fonts.render(value, stdscr, args.font, screen_width, screen_height)
 
             stdscr.refresh()
             time.sleep(0.12345)
     except KeyboardInterrupt:
         pass
 
-    return value
+    return mode.termination_string
 
 
 def main():
@@ -66,7 +68,7 @@ def main():
         mode.configure_parser(subparser)
         subparser.set_defaults(mode=mode)
 
-    output = curses.wrapper(loop, parser.parse_args())
+    termination_string = curses.wrapper(loop, parser.parse_args())
 
-    if output is not None:
-        print(output)
+    if termination_string is not None:
+        print(termination_string)
