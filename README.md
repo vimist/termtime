@@ -3,6 +3,7 @@
 A command line utility to manage and display time related tasks in the terminal:
 - Display a live 24 hour clock
 - Start a live stopwatch
+- Start a countdown timer
 
 ## Installation
 
@@ -36,10 +37,10 @@ Automatically scales to the size of the screen!
 ```
 usage: termtime [-h] [-f {default}] [--max-width MAX_WIDTH]
                 [--max-height MAX_HEIGHT]
-                {stopwatch,clock} ...
+                {stopwatch,clock,countdown} ...
 
 positional arguments:
-  {stopwatch,clock}     Modes that termtime supports.
+  {stopwatch,clock,countdown}     Modes that termtime supports.
 
 optional arguments:
   -h, --help            show this help message and exit

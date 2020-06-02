@@ -26,7 +26,7 @@ def loop(stdscr, args):
     mode = args.mode(args)
 
     try:
-        while True:
+        while mode.running:
             stdscr.clear()
 
             screen_height, screen_width = stdscr.getmaxyx()
@@ -63,6 +63,7 @@ def main():
         mode = getattr(modes, mode_name)
         subparser = subparsers.add_parser(
             mode_name.lower())
+        mode.configure_parser(subparser)
         subparser.set_defaults(mode=mode)
 
     output = curses.wrapper(loop, parser.parse_args())
