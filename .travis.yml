@@ -8,15 +8,15 @@ deploy:
   user: __token__
   password:
     secure: >
-    A6TKegnnpNB+QtmRKq5YJHTsRvZ5xBx2Cjnu20LsODRQwNfDm2Tg88Obdz8QzEU1kChbE6VY/6K
-    YhSqEnKaWem2sY2O4QO5dIATW5DLLL3V289cOq2eP/GhFBveXuIHu3gNbZ4xjHRLmEZ3tPIo6QS
-    IW3lecDeLGoT32vj+1wfC5hzCu/7z/DGR6iWNTTO8fuctFCeTwzLcRkpbJJfSxjWWsphKmrlmU2
-    TgIdYHcpmznslXfkNB0mUh+ZyQPVnVVoRN5fW0lMkqqYmhGDwdk4Qn81EbBRwMGbWnQojkVLm2u
-    MH3rpUiZ3EcWQdlBq8jlckR0HbVeYqstMKfh5oIgI/1TcXu5CimcXJyzxLM+XGG/SXJq/p1NR3D
-    yRDRN43MvhAVPd4DX6M14oy63fEa9GCeOaYeBeN+hDtDkMCZq1NOEa62kQ2+V47/1cbfvpVwZHu
-    ztn3od2xsY5SahLYwS1PrObGZhsYxMcG4f4so9TJB+EXLZrO/AXDaHaVnE0dXtpUoTr/0YEjns+
-    9K48+iE5ENavrqx7JcKGtaAqZjWFZ5vCaR8PyMqeCPs1dlYJECC0baPc6xiqSCpGYAKfIx4d2jh
-    xBd84NGAXI76ggfhvDtkQpFfjkzXxEFXMvaRfpw/AotgG6wlKSITD7PKNlTcJoYz+/VjflS0Uwf
-    KX78S4uc=
+      A6TKegnnpNB+QtmRKq5YJHTsRvZ5xBx2Cjnu20LsODRQwNfDm2Tg88Obdz8QzEU1kChbE6VY/
+      6KYhSqEnKaWem2sY2O4QO5dIATW5DLLL3V289cOq2eP/GhFBveXuIHu3gNbZ4xjHRLmEZ3tPI
+      o6QSIW3lecDeLGoT32vj+1wfC5hzCu/7z/DGR6iWNTTO8fuctFCeTwzLcRkpbJJfSxjWWsphK
+      mrlmU2TgIdYHcpmznslXfkNB0mUh+ZyQPVnVVoRN5fW0lMkqqYmhGDwdk4Qn81EbBRwMGbWnQ
+      ojkVLm2uMH3rpUiZ3EcWQdlBq8jlckR0HbVeYqstMKfh5oIgI/1TcXu5CimcXJyzxLM+XGG/S
+      XJq/p1NR3DyRDRN43MvhAVPd4DX6M14oy63fEa9GCeOaYeBeN+hDtDkMCZq1NOEa62kQ2+V47
+      /1cbfvpVwZHuztn3od2xsY5SahLYwS1PrObGZhsYxMcG4f4so9TJB+EXLZrO/AXDaHaVnE0dX
+      tpUoTr/0YEjns+9K48+iE5ENavrqx7JcKGtaAqZjWFZ5vCaR8PyMqeCPs1dlYJECC0baPc6xi
+      qSCpGYAKfIx4d2jhxBd84NGAXI76ggfhvDtkQpFfjkzXxEFXMvaRfpw/AotgG6wlKSITD7PKN
+      lTcJoYz+/VjflS0UwfKX78S4uc=
   on:
     tags: true
