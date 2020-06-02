@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name='termtime',
-    version='0.2.1',
+    version='0.2.2',
     author='Vimist',
     description='Stopwatch, Timer, Clock - All in the terminal',
     url='https://github.com/vimist/termtime',
